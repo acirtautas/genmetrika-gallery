@@ -1,29 +1,19 @@
 // ==UserScript==
 // @name         Genmetrika.eu Gallery
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Modal gallery for genmetrika.eu: view all thumbnails, large images, zoom, rotate, and navigate with keyboard or mouse. Use arrows, +/-, or mouse wheel to navigate and zoom.
 // @author       Alfonsas Cirtautas
 // @updateURL    https://raw.githubusercontent.com/acirtautas/genmetrika-gallery/main/genmetrika-gallery.user.js
 // @downloadURL  https://raw.githubusercontent.com/acirtautas/genmetrika-gallery/main/genmetrika-gallery.user.js
-// @match        https://www.genmetrika.eu/*
-// @match        http://www.genmetrika.eu/*
-// @match        https://genmetrika.eu/*
-// @match        http://genmetrika.eu/*
-// @match        http://www.genmetrika.rf.gd/*
-// @match        https://www.genmetrika.eu/*/content/index.html
-// @match        http://www.genmetrika.eu/*/content/index.html
-// @match        https://genmetrika.eu/*/content/index.html
-// @match        http://genmetrika.eu/*/content/index.html
-// @match        https://www.genmetrika.eu/*/content/*_large.html
-// @match        http://www.genmetrika.eu/*/content/*_large.html
-// @match        https://genmetrika.eu/*/content/*_large.html
-// @match        http://genmetrika.eu/*/content/*_large.html
+// @match        *://*.genmetrika.eu/*/content/*.html
+// @match        *://*.genmetrika.rf.gd/*/content/*.html
 // @grant        GM_xmlhttpRequest
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
 // @grant        GM_addStyle
 // @connect      genmetrika.eu
+// @connect      genmetrika.rf.gd
 // ==/UserScript==
 (function() {
     'use strict';
@@ -257,7 +247,15 @@
         function setMain(idx) {
             current = idx;
             scale = 1; panX = 0; panY = 0;
-            mainImg.onload = () => updateTransform();
+            // Apply gray filter to indicate loading
+            mainImg.style.filter = 'grayscale(1) brightness(0.7)';
+            mainImg.onload = () => {
+                mainImg.style.filter = '';
+                updateTransform();
+            };
+            mainImg.onerror = () => {
+                mainImg.style.filter = 'grayscale(1) brightness(0.7)';
+            };
             mainImg.src = gallery[idx].largeImg;
             updateTransform();
             Array.from(sidebar.children).forEach((el, i) => {
