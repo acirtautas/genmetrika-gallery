@@ -13,6 +13,10 @@ Enhances the browsing experience on genmetrika.eu photo galleries by providing a
 - One-Click Link Copy: Provides a convenient way to copy the link to the current image.
 - Compatibility: Works seamlessly with all genmetrika.eu index and large image pages.
 
+## Screenshot
+![Gallery screenshot](screenshot.png)
+*Example: The gallery modal with sidebar thumbnails and image controls.*
+
 ## Installation
 1. Install Tampermonkey: Ensure you have the Tampermonkey extension installed in your browser.
 2. Install/Update Script:
