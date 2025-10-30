@@ -6,12 +6,14 @@
 // @author       Alfonsas Cirtautas
 // @updateURL    https://raw.githubusercontent.com/acirtautas/genmetrika-gallery/main/genmetrika-gallery.user.js
 // @downloadURL  https://raw.githubusercontent.com/acirtautas/genmetrika-gallery/main/genmetrika-gallery.user.js
-// @match        *://*.genmetrika.eu/*/content/*.html
-// @match        *://*.genmetrika.rf.gd/*/content/*.html
+// @match        *://www.genmetrika.eu/*/content/*.html
+// @match        *://genmetrika.eu/*/content/*.html
+// @match        *://genmetrika.rf.gd/*/content/*.html
 // @grant        GM_xmlhttpRequest
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
 // @grant        GM_addStyle
+// @connect      www.genmetrika.eu
 // @connect      genmetrika.eu
 // @connect      genmetrika.rf.gd
 // ==/UserScript==
