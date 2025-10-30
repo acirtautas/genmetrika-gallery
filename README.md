@@ -14,7 +14,7 @@ Enhances the browsing experience on genmetrika.eu photo galleries by providing a
 - Compatibility: Works seamlessly with all genmetrika.eu index and large image pages.
 
 ## Screenshot
-![Gallery screenshot](screenshot.png)
+![Gallery screenshot](screenshot.jpg)
 *Example: The gallery modal with sidebar thumbnails and image controls.*
 
 ## Installation
