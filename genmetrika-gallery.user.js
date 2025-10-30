@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Genmetrika.eu Gallery
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Modal gallery for genmetrika.eu: view all thumbnails, large images, zoom, rotate, and navigate with keyboard or mouse. Use arrows, +/-, or mouse wheel to navigate and zoom.
 // @author       Alfonsas Cirtautas
 // @updateURL    https://raw.githubusercontent.com/acirtautas/genmetrika-gallery/main/genmetrika-gallery.user.js
@@ -9,6 +9,7 @@
 // @match        *://www.genmetrika.eu/*/content/*.html
 // @match        *://genmetrika.eu/*/content/*.html
 // @match        *://genmetrika.rf.gd/*/content/*.html
+// @match        *://genmetrika.atspace.eu/*/content/*.html
 // @grant        GM_xmlhttpRequest
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
@@ -16,6 +17,7 @@
 // @connect      www.genmetrika.eu
 // @connect      genmetrika.eu
 // @connect      genmetrika.rf.gd
+// @connect      genmetrika.atspace.eu
 // ==/UserScript==
 (function() {
     'use strict';
